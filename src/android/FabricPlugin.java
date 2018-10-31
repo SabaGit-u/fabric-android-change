@@ -41,6 +41,12 @@ public class FabricPlugin extends CordovaPlugin {
 	protected void pluginInitialize() {
 		Fabric.with(this.cordova.getActivity().getApplicationContext(), new Crashlytics(), new Answers());
 	}
+	
+	@Override
+	protected void attachBaseContext(Context base) {
+	    super.attachBaseContext(base);
+	    MultiDex.install(this);
+	}
 
 	@Override
 	public boolean execute(final String action, final JSONArray data, final CallbackContext callbackContext) {
