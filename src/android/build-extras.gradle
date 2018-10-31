@@ -14,11 +14,6 @@ buildscript {
 android {
     defaultConfig {
         applicationId packageName
-		minSdkVersion 21
-		multiDexEnabled true
-    }
-	dexOptions {
-		javaMaxHeapSize "4g"
     }
 }
 
