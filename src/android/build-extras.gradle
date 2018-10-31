@@ -14,7 +14,8 @@ buildscript {
 android {
     defaultConfig {
         applicationId packageName
-		multiDexEnabled true
+	minSdkVersion 21
+	multiDexEnabled true
     }
 }
 
