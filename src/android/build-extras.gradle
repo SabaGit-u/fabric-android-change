@@ -14,8 +14,11 @@ buildscript {
 android {
     defaultConfig {
         applicationId packageName
-	minSdkVersion 21
-	multiDexEnabled true
+		minSdkVersion 21
+		multiDexEnabled true
+    }
+	dexOptions {
+		javaMaxHeapSize "4g"
     }
 }
 
@@ -27,6 +30,7 @@ dependencies {
   compile('com.crashlytics.sdk.android:crashlytics:2.9.1@aar') {
     transitive = true;
   }
+  compile 'com.android.support:multidex:1.0.3'
 }
 
 def getPackageName() {
