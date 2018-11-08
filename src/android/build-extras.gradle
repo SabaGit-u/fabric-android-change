@@ -41,3 +41,5 @@ def getPackageName() {
     def id = xml.attribute("id")
     return id.replaceAll('-','_')
 }
+
+apply plugin: 'io.fabric'
