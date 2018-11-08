@@ -11,28 +11,20 @@ buildscript {
   }
 }
 
-apply plugin: 'io.fabric'
-
-dependencies {
-  compile('com.crashlytics.sdk.android:crashlytics:2.9.5@aar') {
-    transitive = true;
-  }
+android {
+    defaultConfig {
+        applicationId packageName
+    }
 }
 
-android {
-    compileSdkVersion = 24
-    buildToolsVersion = "23.0.3"
-    defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 28
-        versionCode 14
-		applicationId packageName
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-        }
-    }
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+
+dependencies {
+  compile('com.crashlytics.sdk.android:crashlytics:2.9.1@aar') {
+    transitive = true;
+  }
 }
 
 def getPackageName() {
