@@ -42,4 +42,4 @@ def getPackageName() {
     return id.replaceAll('-','_')
 }
 
-apply plugin: 'io.fabric'
+
