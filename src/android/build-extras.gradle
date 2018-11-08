@@ -20,7 +20,7 @@ dependencies {
 apply plugin: 'io.fabric'
 
 android {
-    compileSdkVersion = 2
+    compileSdkVersion = 24
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 28
