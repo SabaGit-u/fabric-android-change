@@ -11,6 +11,9 @@ buildscript {
   }
 }
 
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
 dependencies {
   compile('com.crashlytics.sdk.android:crashlytics:2.9.5@aar') {
     transitive = true;
