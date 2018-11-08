@@ -12,7 +12,7 @@ buildscript {
 
 android {
     defaultConfig {
-        applicationId packageName
+        applicationId com.hotcourses.group.wuapp
 	multiDexEnabled true
     }
 }
