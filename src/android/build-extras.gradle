@@ -17,6 +17,12 @@ android {
     }
 }
 
+dependencies {
+  compile('com.crashlytics.sdk.android:crashlytics:2.9.1@aar') {
+    transitive = true;
+  }
+}
+
 repositories {
     maven { url 'https://maven.fabric.io/public' }
 }
