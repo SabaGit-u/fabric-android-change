@@ -11,21 +11,28 @@ buildscript {
   }
 }
 
-android {
-    defaultConfig {
-        applicationId packageName
-		multiDexEnabled true
-    }
-}
-
-repositories {
-    maven { url 'https://maven.fabric.io/public' }
-}
-
 dependencies {
   compile('com.crashlytics.sdk.android:crashlytics:2.9.5@aar') {
     transitive = true;
   }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 14
+		applicationId packageName
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
 }
 
 def getPackageName() {
@@ -41,5 +48,3 @@ def getPackageName() {
     def id = xml.attribute("id")
     return id.replaceAll('-','_')
 }
-
-apply plugin: 'io.fabric'
