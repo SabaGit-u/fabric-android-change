@@ -8,6 +8,8 @@ import org.json.JSONObject;
 
 import com.crashlytics.android.Crashlytics;
 import com.crashlytics.android.BuildConfig;
+import com.crashlytics.android.core.CrashlyticsCore;
+import com.crashlytics.android.core.CrashlyticsCore.Builder;
 import com.crashlytics.android.answers.AddToCartEvent;
 import com.crashlytics.android.answers.Answers;
 import com.crashlytics.android.answers.AnswersEvent;
