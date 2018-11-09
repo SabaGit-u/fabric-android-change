@@ -42,7 +42,7 @@ public class FabricPlugin extends CordovaPlugin {
 
 	@Override
 	protected void pluginInitialize() {
-		Crashlytics crashlyticsKit = new Crashlytics.Builder().core(new CrashlyticsCore.Builder().disabled(false).build()).build();
+		Crashlytics crashlyticsKit = new Crashlytics.Builder().core(new CrashlyticsCore.Builder().disabled(true).build()).build();
 		Fabric.with(this.cordova.getActivity().getApplicationContext(), crashlyticsKit, new Answers());
 	}
 
