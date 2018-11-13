@@ -25,7 +25,6 @@ import com.crashlytics.android.answers.SearchEvent;
 import com.crashlytics.android.answers.ShareEvent;
 import com.crashlytics.android.answers.SignUpEvent;
 import com.crashlytics.android.answers.StartCheckoutEvent;
-
 import android.util.Log;
 
 import java.lang.reflect.Method;
@@ -41,10 +40,10 @@ public class FabricPlugin extends CordovaPlugin {
 	private final String pluginName = "FabricPlugin";
 
 	@Override
-	protected void pluginInitialize(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		Crashlytics crashlyticsKit = new Crashlytics.Builder().core(new CrashlyticsCore.Builder().disabled(false).build()).build();
-		Fabric.with(this.cordova.getActivity().getApplicationContext(), crashlyticsKit, new Answers());
+	protected void pluginInitialize() {
+		//Crashlytics crashlyticsKit = new Crashlytics.Builder().core(new CrashlyticsCore.Builder().disabled(false).build()).build();
+		//Fabric.with(this.cordova.getActivity().getApplicationContext(), crashlyticsKit, new Answers());
+		Fabric.with(this.cordova.getActivity().getApplicationContext(), new Crashlytics(), new Answers());
 	}
 
 	@Override
