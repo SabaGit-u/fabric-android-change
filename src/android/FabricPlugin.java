@@ -34,14 +34,15 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Currency;
 import java.util.Iterator;
-
+import android.os.Bundle;
 import io.fabric.sdk.android.Fabric;
 
 public class FabricPlugin extends CordovaPlugin {
 	private final String pluginName = "FabricPlugin";
 
 	@Override
-	protected void pluginInitialize() {
+	protected void pluginInitialize(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
 		Crashlytics crashlyticsKit = new Crashlytics.Builder().core(new CrashlyticsCore.Builder().disabled(false).build()).build();
 		Fabric.with(this.cordova.getActivity().getApplicationContext(), crashlyticsKit, new Answers());
 	}
